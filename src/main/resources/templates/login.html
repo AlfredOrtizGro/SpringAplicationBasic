@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://thymeleaf.org">
+    <head th:replace="layout/plantilla :: head">
+        <title>login</title>
+    </head>
+    <body>
+        <header th:replace="layout/plantilla :: header"/>
+        <section id="actions" class="py-4 mb-4 bag-light">
+            <div class="container">
+                <div class="row">
+                    <!-- Agregar botones-->
+                </div>
+            </div>
+        </section>
+
+        <section id="login">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 mx-auto">
+                        <div class="card">
+                            <div class="card-header">Login</div>
+
+                            <div class="card-body">
+                                <form class="d-grid gap-2" method="POST" th:action="@{/login}">
+                                    <div class="row mb-3">
+                                        <label  class="col-sm-3 col-form-label" for="username">[[#{login.username}]]</label>
+                                        <div class="col-sm-9">
+                                            <input class="form-control" type="text" name="username" id="username"/>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <label class="col-sm-3 col-form-label" for="password">[[#{login.password}]]</label>
+                                        <div class="col-sm-9">
+                                            <input class="form-control" type="password" name="password" id="password"/>
+                                        </div>
+                                    </div>
+
+                                    <input class="btn btn-primary" type="submit" th:value="#{login.titulo}"/>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer th:replace="layout/plantilla :: footer"/>
+    </body>
+</html>
